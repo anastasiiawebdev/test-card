@@ -305,6 +305,14 @@ sup {
 	 .c-tooltip__icon-info-fill {
 		display: flex;
 	 }
+	 @include r(576) {
+		.c-tooltip__icon-info {
+		 display: flex;
+		}
+		.c-tooltip__icon-info-fill {
+		 display: none;
+		}
+	 }
 	}
 	&-box {
 	 position: absolute;
