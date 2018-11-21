@@ -1,0 +1,403 @@
+@import 'mixins';
+
+html,
+body {
+ overflow-x: hidden;
+ display: flex;
+}
+
+body {
+ font-family: $font-raleway;
+ min-height: 100vh;
+ min-width: 320px;
+ width: 100%;
+ height: 100%;
+ flex-direction: column;
+ position: relative;
+}
+
+img {
+ max-width: 100%;
+}
+
+sup {
+ font-size: 8px;
+ position: relative;
+ bottom: 5px;
+}
+
+.c {
+ &-card {
+	border-radius: 3px;
+	box-shadow: 0 3px 4.7px 0.3px rgba(0, 0, 0, 0.1), 0 1px 6.9px 0.1px rgba(0, 0, 0, 0.04);
+	&-main {
+	 display: flex;
+	 position: relative;
+	 border-bottom: 1px solid $light-grey;
+	 &__item {
+		flex-grow: 0;
+		flex-shrink: 0;
+	 }
+	 @include r(768) {
+		flex-direction: column;
+		display: block;
+	 }
+	}
+	&-settings-facilities {
+	 flex-basis: 66.5%;
+	 max-width: 66.5%;
+	 padding: 10px 20px 0;
+	 @include r(768) {
+		flex-basis: 100%;
+		max-width: 100%;
+	 }
+	}
+	&-content {
+	 ul {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+		 flex: 0 0 50%;
+		 max-width: 50%;
+		 display: flex;
+		 align-items: center;
+		 margin-bottom: 5px;
+		 padding-right: 15px;
+		 span {
+			font-size: 14px;
+			&.accent-text {
+			 font-weight: 500;
+			 font-size: 14px;
+			}
+		 }
+		}
+	 }
+	 &-title {
+		font-family: $font-raleway;
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	 }
+	 & + .card-content {
+		border-top: 1px solid $light-grey;
+	 }
+	 &--settings {
+		max-width: 70%;
+		@include r(768) {
+		 max-width: 100%;
+		}
+	 }
+	 &--facilities {
+		border-top: 1px solid $light-grey;
+		padding-top: 5px;
+		margin-top: 5px;
+	 }
+	}
+	&-icon {
+	 padding-right: 10px;
+	 width: 40px;
+	 &::before {
+		font-size: 20px;
+	 }
+	 &.icon-ruler:before {
+		font-size: 25px;
+	 }
+	 &.icon-bed:before {
+		font-size: 17px;
+	 }
+	 &.icon-cigarette:before {
+		font-size: 17px;
+	 }
+	 &.icon-wifi:before {
+		font-size: 18px;
+	 }
+	 &.icon-shower:before {
+		font-size: 22px;
+	 }
+	 &.icon-airconditioner:before {
+		font-size: 17px;
+	 }
+	 &.icon-cup:before {
+		font-size: 14px;
+	 }
+	 &.icon-kingbed:before {
+		font-size: 17px;
+	 }
+	 &.fa-circle {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		&::before {
+		 font-size: 3px;
+		}
+	 }
+	}
+	&-rates {
+	 padding: 15px;
+	 position: relative;
+	 &__item {
+		display: flex;
+		padding: 15px;
+		margin-bottom: 15px;
+		border: 1px solid $light-grey;
+		border-radius: 5px;
+		position: relative;
+		&:last-of-type {
+		 margin-bottom: 0;
+		}
+		.card-content + .card-content {
+		 border: none;
+		}
+		@include r(768) {
+		 flex-direction: column;
+		 align-items: flex-start;
+		 display: block;
+		}
+	 }
+	 &-extra-benefit {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		font-size: 12px;
+		font-weight: 600;
+		color: #fff;
+		background-color: $blue;
+		padding: 0 20px;
+		height: 30px;
+		border-radius: 0 5px 0 5px;
+		line-height: 30px;
+		&.icon-ladder {
+		 &::before {
+			font-size: 23px;
+			position: relative;
+			right: 10px;
+			bottom: 1px;
+		 }
+		}
+	 }
+	}
+	&-rate {
+	 &__item {
+		flex: 0 0 25%;
+		max-width: 25%;
+		ul {
+		 li {
+			flex: 0 0 100%;
+			max-width: 100%;
+			span {
+			 font-size: 12px;
+			}
+		 }
+		}
+		@include r(768) {
+		 flex-basis: 100%;
+		 max-width: 100%;
+		 margin-bottom: 15px;
+		 display: block;
+		}
+	 }
+	 &-price {
+		font-size: 36px;
+		font-family: $font-roboto;
+		display: block;
+		sub {
+		 font-size: 24px;
+		 bottom: 0;
+		}
+		&-old {
+		 color: #bdbdbd;
+		 font-size: 24px;
+		 position: relative;
+		 display: inline-block;
+		 font-weight: 300;
+		 &::before {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: #bdbdbd;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		 }
+		 sub {
+			font-size: 18px;
+		 }
+		}
+	 }
+	 &-nights {
+		font-family: $font-roboto;
+		font-size: 14px;
+		display: block;
+	 }
+	 &-btn-wrap {
+		align-self: center;
+		@include r(768) {
+		 align-self: stretch;
+		}
+	 }
+	}
+ }
+ &-btn-more {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	padding: 5px 15px;
+	font-size: 16px;
+	font-family: $font-roboto;
+	color: $blue;
+	cursor: pointer;
+	font-weight: 700;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 15px;
+	border: none;
+	transition: bottom .1s;
+	&:hover {
+	 .hi-icon-cog {
+		background-color: $blue;
+		right: 5px;
+		&::before {
+		 color: #fff;
+		 -webkit-text-stroke-width: .5px;
+		 -webkit-text-stroke-color: #fff;
+		}
+	 }
+	 &::before {
+		color: #fff;
+	 }
+	}
+	&:active {
+	 bottom: -2px;
+	}
+	&--rates {
+	 margin-top: 15px;
+	}
+ }
+ &-tooltip {
+	position: relative;
+	display: flex;
+	margin-left: 10px;
+	font-size: 12px;
+	&__icon {
+	 color: $blue;
+	 display: flex;
+	 &-info-fill {
+		display: none;
+	 }
+	}
+	&:hover {
+	 .c-tooltip-box {
+		transform: scale(1);
+		opacity: 1;
+		@include r(576) {
+		 transform: scale(0);
+		 opacity: 0;
+		}
+		&:hover {
+		 display: block;
+		}
+	 }
+	 .c-tooltip__icon-info {
+		display: none;
+	 }
+	 .c-tooltip__icon-info-fill {
+		display: flex;
+	 }
+	}
+	&-box {
+	 position: absolute;
+	 width: 250px;
+	 background-color: #fff;
+	 box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
+	 top: -20px;
+	 left: 20px;
+	 padding: 10px;
+	 color: #333;
+	 border-radius: 4px;
+	 box-sizing: border-box;
+	 text-align: left;
+	 z-index: 1000;
+	 transform: scale(0);
+	 transform-origin: 0 0;
+	 opacity: 0;
+	 transition: all .3s;
+	 &:after {
+		content: "";
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		background-color: #fff;
+		transform: rotate(45deg);
+		top: 20px;
+		left: -5px;
+	 }
+	 &:before {
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 100%;
+		top: 0;
+		left: -20px;
+	 }
+	 @include r(576) {
+		transform: scale(1);
+		opacity: 1;
+		position: static;
+		display: block;
+		width: 100%;
+		padding: 44px 20px;
+		&::after {
+		 display: none;
+		}
+	 }
+	}
+ }
+ &-ribbon {
+	font-family: $font-roboto;
+	padding: 5px 20px;
+	display: inline-block;
+	border-radius: 5px;
+	position: relative;
+	right: 20px;
+	line-height: 1.5;
+ }
+ &-details {
+	font-size: 12px;
+	margin-bottom: 15px;
+ }
+}
+
+.accent {
+ &-green {
+	color: $green;
+ }
+ &-blue {
+	color: $blue;
+ }
+ &-lightblue {
+	&-bg {
+	 background-color: #eaf3fc;
+	 padding-bottom: 35px;
+	 border: none;
+	 position: relative;
+	 &::before {
+		content: '';
+		border-radius: 0 0 5px 5px;
+		height: 4px;
+		background-color: $blue;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	 }
+	}
+ }
+ &-orange {
+	&-bg {
+	 background-color: $orange;
+	}
+ }
+}
+

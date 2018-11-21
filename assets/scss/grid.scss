@@ -1,0 +1,24 @@
+$grid-max-width: 1320px;
+
+.wrap {
+  display: block;
+  width: 100%;
+  max-width: $grid-max-width;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include r(420) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.l {
+  &-section {
+    margin: 15px 0;
+  }
+  &-wrap {
+    max-width: 905px;
+  }
+}
